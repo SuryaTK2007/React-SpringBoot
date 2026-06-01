@@ -21,11 +21,14 @@ public class StudentService {
     
     public Student getStudentByRollNo(int rollNo) {
         int index = 0;
+        boolean flag = true;
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getRollNo() == rollNo) {
                 index = i;
+                flag = false;
             }
         }
-        return students.get(index);
+        if(flag==true) return new Student();
+        else return students.get(index);
     }
 }
