@@ -37,4 +37,15 @@ public class StudentService {
     public void addStudent(Student std) {
         students.add(std);
     }
+
+    public void updateStudent(Student std) {
+        int index = 0;
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getRollNo() == std.getRollNo()) {
+                index = i;
+                break;
+            }
+        }
+        students.set(index, std);
+    }
 }
