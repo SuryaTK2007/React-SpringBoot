@@ -20,9 +20,12 @@ public class StudentService {
     }
     
     public Student getStudentByRollNo(int rollNo) {
-        return students.stream()
-                .filter(s -> s.getRollNo() == rollNo)
-                .findFirst()
-                .orElse(null);
+        int index = 0;
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getRollNo() == rollNo) {
+                index = i;
+            }
+        }
+        return students.get(index);
     }
 }
