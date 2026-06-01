@@ -14,7 +14,15 @@ public class StudentService {
         new Student(1, "john", "java"),
         new Student(2, "alice", "python")
     ));
+
     public List<Student> getAllStudent() {
         return students;
+    }
+    
+    public Student getStudentByRollNo(int rollNo) {
+        return students.stream()
+                .filter(s -> s.getRollNo() == rollNo)
+                .findFirst()
+                .orElse(null);
     }
 }
