@@ -28,7 +28,13 @@ public class StudentService {
                 flag = false;
             }
         }
-        if(flag==true) return new Student();
-        else return students.get(index);
+        if (flag == true)
+            return new Student();
+        else
+            return students.get(index);
+    }
+    
+    public void addStudent(Student std) {
+        students.add(std);
     }
 }
