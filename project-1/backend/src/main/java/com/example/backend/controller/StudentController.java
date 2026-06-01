@@ -3,6 +3,7 @@ package com.example.backend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,10 +38,14 @@ public class StudentController {
     
     @PutMapping("/students/{rollNo}")
     public String updateStudent(@PathVariable("rollNo") int rollNo, @RequestBody Student std) {
-        // Ensure the rollNo from path matches the student object
         std.setRollNo(rollNo);
         s.updateStudent(std);
         return "Success";
     }
     
+    @DeleteMapping("/students/{rollNo}")
+    public String deleteStudent(@PathVariable("rollNo") int rollNo) {
+        s.deleteStudent(rollNo);
+        return "Success";
+    }
 }   

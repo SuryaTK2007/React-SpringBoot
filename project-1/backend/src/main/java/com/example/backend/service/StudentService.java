@@ -48,4 +48,15 @@ public class StudentService {
         }
         students.set(index, std);
     }
+
+    public void deleteStudent(int rollNo) {
+        int index = 0;
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getRollNo() == rollNo) {
+                index = i;
+                break;
+            }
+        }
+        students.remove(index);
+    }  
 }
