@@ -24,4 +24,13 @@ public class StudentService {
     public Student getStudentByRollNo(int roll) {
         return r.findById(roll).orElse(null);
     }
+
+    public void updateStudent(int roll, Student std) {
+        Student s = r.findById(roll).orElse(null);
+        if (s != null) {
+            s.setName(std.getName());
+            s.setTech(std.getTech());
+            r.save(s);
+        }
+    }
 }
