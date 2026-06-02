@@ -49,4 +49,10 @@ public class StudentController {
         s.deleteStudent(roll);
         return "Success";
     }
+
+    @DeleteMapping("/students")
+    public String deleteAllStudents() {
+        s.deleteAllStudents();
+        return "Success";
+    }
 }

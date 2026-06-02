@@ -37,4 +37,8 @@ public class StudentService {
     public void deleteStudent(int roll) {
         r.deleteById(roll);
     }
+
+    public void deleteAllStudents() {
+        r.deleteAll();
+    }
 }
