@@ -16,6 +16,7 @@ import com.example.psql.service.StudentService;
 
 
 
+
 @RestController
 public class StudentController {
 
@@ -57,7 +58,17 @@ public class StudentController {
     }
 
     @GetMapping("/students/{tech}/{gender}")
-    public List<Student> getStudentByGenderAndTech(@PathVariable("tech") String tech, @PathVariable("gender") String gender) {
+    public List<Student> getStudentByGenderAndTech(@PathVariable("tech") String tech,
+            @PathVariable("gender") String gender) {
         return s.getStudentByGenderAndTech(tech, gender);
+    }
+    
+    @GetMapping("/students/tech/{tech}")
+    public List<Student> getStudentByTech(@PathVariable("tech") String tech) {
+        return s.getStudentByTech(tech);
+    }
+    @GetMapping("/students/gender/{gender}")
+    public List<Student> getStudentByGender(@PathVariable("gender") String gender) {
+        return s.getStudentByGender(gender);
     }
 }
