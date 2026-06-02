@@ -20,4 +20,8 @@ public class StudentService {
     public void addStudent(Student std) {
         r.save(std);
     }
+
+    public Student getStudentByRollNo(int roll) {
+        return r.findById(roll).orElse(null);
+    }
 }
