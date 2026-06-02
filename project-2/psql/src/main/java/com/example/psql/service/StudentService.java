@@ -12,7 +12,12 @@ import com.example.psql.repository.Repo;
 public class StudentService {
     @Autowired
     Repo r;
+
     public List<Student> getAllStudents() {
         return r.findAll();
+    }
+
+    public void addStudent(Student std) {
+        r.save(std);
     }
 }
