@@ -55,4 +55,9 @@ public class StudentController {
         s.deleteAllStudents();
         return "Success";
     }
+
+    @GetMapping("/students/{tech}/{gender}")
+    public List<Student> getStudentByGenderAndTech(@PathVariable("tech") String tech, @PathVariable("gender") String gender) {
+        return s.getStudentByGenderAndTech(tech, gender);
+    }
 }

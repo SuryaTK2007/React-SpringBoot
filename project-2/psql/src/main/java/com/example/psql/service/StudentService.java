@@ -41,4 +41,8 @@ public class StudentService {
     public void deleteAllStudents() {
         r.deleteAll();
     }
+
+    public List<Student> getStudentByGenderAndTech(String tech, String gender) {
+        return r.findByTechAndGender(tech, gender);
+    }
 }
