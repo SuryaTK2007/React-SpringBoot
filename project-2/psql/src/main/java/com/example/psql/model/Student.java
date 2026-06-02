@@ -15,4 +15,5 @@ public class Student {
     private int rollNo;
     private String name;
     private String tech;
+    private String gender;
 }
