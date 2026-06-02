@@ -33,4 +33,8 @@ public class StudentService {
             r.save(s);
         }
     }
+
+    public void deleteStudent(int roll) {
+        r.deleteById(roll);
+    }
 }
