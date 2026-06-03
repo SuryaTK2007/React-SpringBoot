@@ -1,4 +1,4 @@
-package com.example.psql.globalExceptionHandling;
+package com.example.psql.Exception;
 import java.util.HashMap;
 import java.util.Map;
 
