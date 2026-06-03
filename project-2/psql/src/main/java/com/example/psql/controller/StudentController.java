@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.psql.model.Student;
 import com.example.psql.service.StudentService;
 
-
-
+import jakarta.validation.Valid;
 
 @RestController
 public class StudentController {
@@ -29,7 +28,7 @@ public class StudentController {
     }
     
     @PostMapping("/students")
-    public String AddStudent(@RequestBody Student std) {
+    public String AddStudent(@Valid @RequestBody Student std) {
         s.addStudent(std);
         return "Success";
     }
