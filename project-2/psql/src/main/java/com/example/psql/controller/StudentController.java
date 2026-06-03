@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.psql.dto.StudentDto;
 import com.example.psql.model.Student;
 import com.example.psql.service.StudentService;
 
 import jakarta.validation.Valid;
+
 
 @RestController
 public class StudentController {
@@ -33,10 +36,10 @@ public class StudentController {
         return "Success";
     }
     
-    @GetMapping("/students/{rollNo}")
-    public Student getStudentByRollNo(@PathVariable("rollNo") int roll){
-        return s.getStudentByRollNo(roll);
-    }
+    // @GetMapping("/students/{rollNo}")
+    // public Student getStudentByRollNo(@PathVariable("rollNo") int roll){
+    //     return s.getStudentByRollNo(roll);
+    // }
     
     @PutMapping("students/{rollNo}")
     public String updateStudent(@PathVariable("rollNo") int roll, @RequestBody Student std) {
@@ -70,4 +73,10 @@ public class StudentController {
     public List<Student> getStudentByGender(@PathVariable("gender") String gender) {
         return s.getStudentByGender(gender);
     }
+
+    @GetMapping("students/{rollNo}")
+    public StudentDto getStudentByRollNo(@PathVariable("rollNo") int roll) {
+        return s.getStudentByRollNo(roll);
+    }
+    
 }
